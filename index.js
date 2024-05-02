@@ -23,8 +23,12 @@ function setupCORS(req, res, next) {
   }
 }
 
-const LOCAL_URL = "mongodb://localhost:27017/";
-
+// const LOCAL_URL = "mongodb://localhost:27017/";
+// const MONGODB_URI = "mongodb+srv://crm-cafe.cm207ma.mongodb.net/";
+// const LOCAL_URL = "mongodb+srv://sardarbekatabekov:<password>@crm-cafe.cm207ma.mongodb.net/";
+const MONGODB_URI = 'mongodb+srv://sardarbekatabekov:YI3AhX4xpR9qxEpM@crm-cafe.cm207ma.mongodb.net/?retryWrites=true&w=majority&appName=CRM-cafe'
+// mongodb+srv://sardarbekatabekov:<password>@crm-cafe.cm207ma.mongodb.net/
+// mongosh "mongodb+srv://crm-cafe.cm207ma.mongodb.net/" --apiVersion 1 --username sardarbekatabekov
 // let dbClient;
 
 app.use(setupCORS);
@@ -43,17 +47,10 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use("/api", Routes);
 
 
-
-
-
-
-
-
-
 const start = async () => {
   const PORT = process.env.PORT || 5000;
   try {
-    await mongoose.connect(LOCAL_URL, {
+    await mongoose.connect(MONGODB_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useFindAndModify: false,

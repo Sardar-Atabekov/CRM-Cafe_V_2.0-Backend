@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const express = require('express');
 
-
-const MONGODB_URI = 'mongodb+srv://Chyngyz:Chyngyz@cluster0-fcshv.mongodb.net/test?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb+srv://sardarbekatabekov:<password>@crm-cafe.cm207ma.mongodb.net/'
+// const MONGODB_URI = 'mongodb+srv://Chyngyz:Chyngyz@cluster0-fcshv.mongodb.net/test?retryWrites=true&w=majority';
 
 
 const index = express();
