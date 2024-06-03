@@ -43,6 +43,9 @@ app.use("/public", express.static(__dirname + "/public"));
 //     console.log("Сервер ожидает подключения...");
 //   });
 // });
+app.get("/", function(request, response){
+  response.send("<h2>Привет Express!</h2>");
+});
 
 app.use("/api", Routes);
 
